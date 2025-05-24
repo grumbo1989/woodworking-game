@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpxmn3x5t7klh"]
+
+[ext_resource type="Script" uid="uid://bb5li6y8bwgc2" path="res://World.cs" id="1_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://do1y1iiliw5kf" path="res://player.tscn" id="2_fj7yv"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dwbse"]
+size = Vector2(4, 4)
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_tlwt5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_dwbse")
+
+[node name="Player" parent="." instance=ExtResource("2_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42297, 0)
