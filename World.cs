@@ -8,7 +8,14 @@ public partial class World : Node3D
         base._Input(@event);
         if (@event.IsActionPressed("ui_cancel"))
         {
-            Input.MouseMode = Input.MouseModeEnum.Visible;
+            if (Input.MouseMode == Input.MouseModeEnum.Captured)
+            {
+                Input.MouseMode = Input.MouseModeEnum.Visible;
+            }
+            else
+            {
+                Input.MouseMode = Input.MouseModeEnum.Captured;
+            }
         }
     }
 
